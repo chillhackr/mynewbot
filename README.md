@@ -40,8 +40,8 @@ It also saves forwarded message info to a local log file (`forwarded.json`) and 
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/forwarded-message-inspector.git
-cd forwarded-message-inspector
+git clone https://github.com/chillhackr/mynewbot.git
+cd mynewbot
 ```
 
 ### 2️⃣ Create and activate a virtual environment
@@ -55,19 +55,31 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 ```
+OR
 
-### 3️⃣ Install dependencies
+run your scripts like I do:
 ```bash
-pip install -r requirements.txt
+# (choose one)
+# Windows:
+.\venv\Scripts\[pip|python]
+# macOS/Linux:
+./venv/bin/[pip|python]
 ```
 
-Example `requirements.txt`:
-```txt
-# Telegram bot framework
-python-telegram-bot
+### 3️⃣ Install dependencies
+Run your scripts without an environment activated:
+```bash
+# (choose one)
+# Windows:
+.\venv\Scripts\pip.exe install -r requirements.txt
+# macOS/Linux:
+./venv/bin/pip install -r requirements.txt
+```
 
-# Environment variable loader
-python-dotenv
+or use the activated environment
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
@@ -87,11 +99,20 @@ Start your bot by running:
 ```bash
 python bot.py
 ```
+or if not using the activated environment:
+```bash
+# (choose one)
+# Windows:
+.\venv\Scripts\python.exe main.py
+# macOS/Linux:
+./venv/bin/python main.py
+```
 
 You should see:
 ```
 Bot running... Press Ctrl+C to stop.
 ```
+Feel free to edit the logic.
 
 Then open your Telegram app and:
 
@@ -135,13 +156,21 @@ Then reinstall dependencies if needed:
 ```bash
 pip install -r requirements.txt
 ```
+or alternatively:
+
+```bash
+./venv/bin/pip install -r requirements.txt
+```
+```bash
+.\venv\Scripts\pip.exe install -r requirements.txt
+```
 
 ---
 
 ## 🧹 Maintenance
 
 - Stop the bot: `CTRL + C`  
-- Deactivate the virtual environment: `deactivate`  
+- Deactivate the virtual environment: `deactivate` if not running from ./venv/[bin|Scripts]
 - Delete logs (if needed): `rm forwarded.json`
 
 ---
